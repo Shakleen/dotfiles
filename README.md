@@ -6,13 +6,18 @@ This repository contains dotfiles for my linux system. It contains configuration
 1. nvim
 1. alacritty
 1. kanata
+1. tmux
 
 ## Required Packages
 ```bash
-sudo pacman -S alacritty nvim waybar hyprland hyprsunset hypridle hyprlock hyprpolkitagent kanata stow
+sudo pacman -S alacritty nvim waybar hyprland hyprsunset hypridle hyprlock hyprpolkitagent kanata stow tmux
 ```
 
+### Synth-shell
 For synth shell follow installation steps at [synthshell github repository](https://github.com/andresgongora/synth-shell)
+
+### Tmux Plugin Manager
+Follow installation for tmux pugin manager at [TPM](https://github.com/tmux-plugins/tpm)
 
 ## Setting configurations
 ```bash

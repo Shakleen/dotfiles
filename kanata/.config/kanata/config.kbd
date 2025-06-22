@@ -14,7 +14,7 @@
 )
 
 (defalias
-    escctrl (tap-hold 100 100 esc lctl)
+    capsesc (tap-hold 100 100 esc esc)
     
     a-mod (tap-hold $tap-time $hold-time a lmet)
     s-mod (tap-hold $tap-time $hold-time s lalt)
@@ -28,7 +28,7 @@
 )
 
 (deflayer base
-    @escctrl
+    @capsesc
     @a-mod @s-mod @d-mod @f-mod
     @j-mod @k-mod @l-mod @;-mod
 )

@@ -40,7 +40,6 @@
   border-width: 0px;
 }
 
-#network,
 #custom-lock {
   background-color: rgba(15, 27, 53, 0.9);
   margin-top: 6px; /* 与屏幕顶部留出距离 */
@@ -75,7 +74,6 @@
 
 /* 鼠标悬停变亮一点 */
 #bluetooth:hover,
-#network:hover,
 /*#tray:hover,*/
 #backlight:hover,
 #battery:hover,

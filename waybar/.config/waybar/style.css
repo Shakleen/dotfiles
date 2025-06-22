@@ -57,6 +57,7 @@
 #pulseaudio,
 #backlight,
 #custom-temperature,
+#custom-hyprsunset,
 #memory,
 #cpu {
   background-color: rgba(15, 27, 53, 0.9);
@@ -86,6 +87,7 @@
 #custom-lock:hover,
 #custom-reboot:hover,
 #custom-power:hover,
+#custom-hyprsunset:hover,
 /*#workspaces:hover,*/
 #window:hover {
   background-color: rgba(70, 75, 90, 0.9);
@@ -120,4 +122,9 @@
 #window {
   font-weight: 500;
   font-style: italic;
+}
+
+#custom-hyprsunset {
+  font-size: 16px;
+  padding: 0 10px;
 }

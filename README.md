@@ -12,6 +12,8 @@ This repository contains dotfiles for my linux system. It contains configuration
 sudo pacman -S alacritty nvim waybar hyprland hyprsunset hypridle hyprlock hyprpolkitagent kanata stow
 ```
 
+For synth shell follow installation steps at [synthshell github repository](https://github.com/andresgongora/synth-shell)
+
 ## Setting configurations
 ```bash
 stow <pkg-name>

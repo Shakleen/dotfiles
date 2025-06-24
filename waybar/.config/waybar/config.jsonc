@@ -10,7 +10,9 @@
     "custom/reboot",
     "custom/power"
   ],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [
+    "clock"
+],
   "modules-right": [
     "battery",
     "bluetooth",
@@ -19,8 +21,7 @@
     "custom/hyprsunset",
     "custom/temperature",
     "memory",
-    "cpu",
-    "clock"
+    "cpu"
   ],
   "hyprland/workspaces": {
     "disable-scroll": false,
@@ -28,14 +29,7 @@
     "format": "{icon}",
     "on-click": "activate",
     "persistent-workspaces": {
-    "*":[1,2,3,4]
-    },
-    "format-icons": {
-      "1": "󰣇",
-      "2": "󰈹",
-      "3": "󰇮",
-      "4": "",
-      "default": ""
+        "*":[1,2,3,4]
     }
   },
   "custom/hyprsunset": {
@@ -114,9 +108,22 @@
   },
   "clock": {
     "interval": 1,
-    "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
+    "format": "{:%H:%M, %A, %d/%m/%Y}",
     "tooltip": true,
-    "tooltip-format": "{:L%A, %Y/%m/%d}"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    }
   },
   "tray": {
     "icon-size": 17,
@@ -136,6 +143,7 @@
   },
   "bluetooth": {
     "format": "<span color='#00BFFF'>  </span>",
+    "format-no-controller": "",
     "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",
     "format-connected-battery": "<span color='#00BFFF'>  </span>{device_alias}{device_battery_percentage}% ",
     "tooltip-format": "{status}\t{controller_alias}\t{controller_address}\n\n{num_connections} connected",

@@ -1,0 +1,43 @@
+[user]
+    name = Shakleen Ishfar
+    email = shakleenishfar@gmail.com
+
+[core]
+    compression = 9
+    whitespace = error
+    preloadindex = true
+
+[advice]
+    addEmptyPathSpec = false
+    pushNonFastForward = false
+    statusHints = false
+
+[init]
+    defaultBranch = main
+
+[status]
+    branch = true
+    showStash = true
+    showUntrackedFile = true
+
+[diff]
+    context = 3
+    renames = copies
+    interHunkContext = 10
+
+[pager]
+    diff = diff-so-fancy | $PAGER 
+
+[diff-so-fancy]
+    markEmptyLines = false
+
+[color "diff"]
+    meta        = black bold
+    frag        = magenta
+    context     = white 
+    whitespace  = yello reverse
+    old         = red
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
+    singlekey = true

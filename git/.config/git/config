@@ -3,6 +3,7 @@
     email = shakleenishfar@gmail.com
 
 [core]
+    editor = nvim
     compression = 9
     whitespace = error
     preloadindex = true
@@ -35,9 +36,49 @@
     meta        = black bold
     frag        = magenta
     context     = white 
-    whitespace  = yello reverse
+    whitespace  = yellow reverse
     old         = red
 
 [interactive]
     diffFilter = diff-so-fancy --patch
     singlekey = true
+
+[push]
+    autoSetRemote = true
+    default = current
+    followTags= true
+
+[pull]
+    fault = current
+    rebase = true
+
+[stash]
+    autoStash = true
+    missingCommitsCheck = warn
+
+[log]
+    abbrevCommit = true
+    graphColors = blue,yellow,cyan,magenta,green,red
+
+[color "decorate"]
+    HEAD = red
+    branch = blue
+    tag = yellow
+    remoteBranch = magenta
+
+[color "branch"]
+    current = magenta
+    local = default
+    remote = yellow
+    upstream = green
+    plain = blue
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = -taggerdate
+
+[pager]
+    branch = false
+    tag = false

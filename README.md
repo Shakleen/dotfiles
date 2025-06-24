@@ -19,6 +19,9 @@ For synth shell follow installation steps at [synthshell github repository](http
 ### Tmux Plugin Manager
 Follow installation for tmux pugin manager at [TPM](https://github.com/tmux-plugins/tpm)
 
+### Diff so Fancy
+Install diff so fancy [repository](https://github.com/so-fancy/diff-so-fancy)
+
 ## Setting configurations
 ```bash
 stow <pkg-name>

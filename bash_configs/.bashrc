@@ -28,3 +28,5 @@ alias gl="git log --all --graph --pretty\
 alias gb="git branch"
 alias gi="git init"
 alias gcl="git clone"
+
+fastfetch

@@ -4,6 +4,7 @@
 
 (defsrc
     caps
+    q w e r t y u i o p
     a s d f
     j k l ;
 )
@@ -15,6 +16,17 @@
 
 (defalias
     capsesc (tap-hold 100 100 esc esc)
+
+    q-mod (tap-hold $tap-time $hold-time q 0)
+    w-mod (tap-hold $tap-time $hold-time w 1)
+    e-mod (tap-hold $tap-time $hold-time e 2)
+    r-mod (tap-hold $tap-time $hold-time r 3)
+    t-mod (tap-hold $tap-time $hold-time t 4)
+    y-mod (tap-hold $tap-time $hold-time y 5)
+    u-mod (tap-hold $tap-time $hold-time u 6)
+    i-mod (tap-hold $tap-time $hold-time i 7)
+    o-mod (tap-hold $tap-time $hold-time o 8)
+    p-mod (tap-hold $tap-time $hold-time p 9)
     
     a-mod (tap-hold $tap-time $hold-time a lmet)
     s-mod (tap-hold $tap-time $hold-time s lalt)
@@ -29,6 +41,7 @@
 
 (deflayer base
     @capsesc
+    @q-mod @w-mod @e-mod @r-mod @t-mod @y-mod @u-mod @i-mod @o-mod @p-mod
     @a-mod @s-mod @d-mod @f-mod
     @j-mod @k-mod @l-mod @;-mod
 )

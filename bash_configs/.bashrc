@@ -88,4 +88,10 @@ export BAT_THEME=TwoDark
 # -------------------------------------------------------------
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
+# -------------------------------------------------------------
+# ---- zoxide (better cd) -----
+# -------------------------------------------------------------
+eval "$(zoxide init bash)"
+alias cd="z"
+
 fastfetch

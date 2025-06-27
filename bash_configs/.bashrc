@@ -39,6 +39,26 @@ eval "$(fzf --bash)"
 # For git integration with fzf
 source ~/fzf-git.sh 
 
+# fzf previews with bat and eza
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
 # -------------------------------------------------------------
 # -- Use fd instead of fzf --
 # -------------------------------------------------------------
@@ -57,5 +77,15 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
+
+# -------------------------------------------------------------
+# ----- Bat (better cat) -----
+# -------------------------------------------------------------
+export BAT_THEME=TwoDark
+
+# -------------------------------------------------------------
+# ---- Eza (better ls) -----
+# -------------------------------------------------------------
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 fastfetch

@@ -2,7 +2,7 @@
 padding.x = 5
 padding.y = 5
 dynamic_padding = true
-opacity = 0.80
+opacity = 0.95
 blur = true
 
 [scrolling]
@@ -10,7 +10,7 @@ history = 10000
 multiplier = 3
 
 [font]
-size = 12
+size = 14
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"

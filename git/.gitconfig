@@ -86,3 +86,10 @@
 [commit]
     template = ~/.gittemplate
     verbose = true
+[safe]
+	directory = /mnt/storage/flash-learn-mono
+	directory = /mnt/storage/flash-learn-mono/flash-learn-ai-judge-python
+	directory = /mnt/storage/flash-learn-mono/flash-learn-backend-go
+	directory = /mnt/storage/flash-learn-mono/flash-learn-frontend-flutter
+	directory = /mnt/storage/flash-learn-mono/flash-learn-docs
+	directory = /mnt/storage/flash-learn-mono/flash-learn-backend-go/flash-learn-db-postgres

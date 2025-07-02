@@ -71,7 +71,7 @@
     "tooltip": true
   },
   "pulseaudio": {
-    "format": "<span color='#00FF7F'>{icon}</span>{volume}% ",
+    "format": "<span color='#00FF7F'>{icon}</span> {volume}% ",
     "format-muted": "<span color='#FF4040'> 󰖁 </span>0% ",
     "format-icons": {
       "headphone": "<span color='#BF00FF'>  </span>",
@@ -93,17 +93,17 @@
   },
   "custom/temperature": {
     "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
-    "format": "<span color='#FFA500'> </span>{}°C ",
+    "format": "<span color='#FFA500'>  </span>{}°C ",
     "interval": 5,
     "tooltip": false
   },
   "memory": {
-    "format": "<span color='#8A2BE2'>  </span>{percentage}%",
+    "format": "<span color='#8A2BE2'>  </span> {percentage}%",
     "tooltip": true,
     "tooltip-format": "{used:0.2f}G/{total:0.2f}G"
   },
   "cpu": {
-    "format": "<span color='#FF9F0A'>  </span>{usage}% ",
+    "format": "<span color='#FF9F0A'>  </span> {usage}% ",
     "tooltip": true
   },
   "clock": {
@@ -117,11 +117,11 @@
                     "weeks-pos"     : "right",
                     "on-scroll"     : 1,
                     "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                  "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                  "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                  "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                  "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                  "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
                               }
                     }
   },

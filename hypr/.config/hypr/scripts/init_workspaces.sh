@@ -2,7 +2,7 @@
 
 # Launch Alacritty and move to workspace 1
 hyprctl dispatch workspace 1
-alacritty -e tmux new -s "Flash Learn" -c /run/media/shakleen/programming/flash-learn-mono/ &
+alacritty -e tmux new -A -s "Flash Learn" -c /run/media/shakleen/programming/flash-learn-mono/ &
 
 # Give Alacritty/tmux a moment to start
 sleep 1

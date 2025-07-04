@@ -1,3 +1,5 @@
+/* Catppuccin Mocha */
+
 /* 全局设置 */
 * {
   font-family:
@@ -5,7 +7,7 @@
     "Font Awesome 6 Free Solid";
   font-weight: bold;
   font-size: 16px;
-  color: #dcdfe1;
+  color: #cdd6f4;
 }
 
 /* 透明 Waybar 背景 */
@@ -19,97 +21,140 @@
 #workspaces,
 #window,
 #tray {
-  /*background-color: rgba(29,31,46, 0.95);*/
-  background-color: rgba(15, 27, 53, 0.9);
-  padding: 4px 6px; /* 保持内部间距 */
-  margin-top: 6px; /* 外部间距增加 */
-  margin-left: 6px; /* 外部间距增加 */
-  margin-right: 6px; /* 外部间距增加 */
-  border-radius: 10px;
-  border-width: 0px;
-}
-
-#clock {
-  background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  background-color: #11111b;
+  padding: 4px 6px;
+  margin-top: 6px;
+  margin-left: 6px;
   margin-right: 6px;
-  padding: 4px 4px; /* 保持内部间距 */
   border-radius: 10px;
   border-width: 0px;
 }
 
+/* Custom Clock Modules */
+#custom-time,
+#custom-weekday,
+#custom-date {
+  background-color: #11111b;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-width: 0px;
+}
+
+#custom-time {
+  border-radius: 10px 0 0 10px;
+  padding-left: 12px;
+  color: #f38ba8; /* Red */
+}
+
+#custom-weekday {
+  color: #a6e3a1; /* Green */
+}
+
+#custom-date {
+  border-radius: 0 10px 10px 0;
+  padding-right: 12px;
+  margin-right: 6px;
+  color: #89b4fa; /* Blue */
+}
+
+/* Right side modules */
+#battery,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#custom-hyprsunset,
+#custom-temperature,
+#memory,
+#cpu {
+  background-color: #11111b;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-width: 0px;
+}
+
+#battery {
+  border-radius: 10px 0 0 10px;
+  padding-left: 12px;
+}
+
+#cpu {
+  border-radius: 0 10px 10px 0;
+  padding-right: 12px;
+  margin-right: 6px;
+}
+
+/* Left side modules */
 #custom-power {
-  background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  background-color: #11111b;
+  margin-top: 6px;
   margin-right: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+  padding: 4px 12px 4px 8px;
   border-radius: 0 10px 10px 0;
   border-width: 0px;
+  color: #f38ba8;
 }
 
 #custom-lock {
-  background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  background-color: #11111b;
+  margin-top: 6px;
   margin-left: 6px;
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+  padding: 4px 8px 4px 12px;
   border-radius: 10px 0 0 10px;
   border-width: 0px;
+  color: #cba6f7;
 }
 
-#custom-reboot,
-#bluetooth,
-#battery,
-#pulseaudio,
-#backlight,
-#custom-temperature,
-#custom-hyprsunset,
-#memory,
-#cpu {
-  background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
-  /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+#custom-reboot {
+  background-color: #11111b;
+  margin-top: 6px;
+  padding: 4px 8px;
   border-width: 0px;
+  color: #fab387;
 }
 
-#custpm-temperature.critical,
-#pulseaudio.muted {
-  color: #ff0000;
-  padding-top: 0;
-}
+/* Module Colors */
+#battery { color: #a6e3a1; }
+#bluetooth { color: #89b4fa; }
+#pulseaudio { color: #f5c2e7; }
+#pulseaudio.muted { color: #f38ba8; }
+#backlight { color: #f9e2af; }
+#custom-hyprsunset { color: #fab387; }
+#custom-temperature { color: #eba0ac; }
+#custom-temperature.critical { color: #f38ba8; }
+#memory { color: #cba6f7; }
+#cpu { color: #f2cdcd; }
+
 
 /* 鼠标悬停变亮一点 */
 #bluetooth:hover,
-/*#tray:hover,*/
 #backlight:hover,
 #battery:hover,
 #pulseaudio:hover,
 #custom-temperature:hover,
 #memory:hover,
 #cpu:hover,
-#clock:hover,
+#custom-time:hover,
+#custom-weekday:hover,
+#custom-date:hover,
 #custom-lock:hover,
 #custom-reboot:hover,
 #custom-power:hover,
 #custom-hyprsunset:hover,
-/*#workspaces:hover,*/
 #window:hover {
-  background-color: rgba(70, 75, 90, 0.9);
+  background-color: #313244;
 }
 
 /* 工作区激活状态高亮 */
 #workspaces button:hover {
-  background-color: rgba(97, 175, 239, 0.2);
+  background-color: #313244;
   padding: 2px 8px;
   margin: 0 2px;
   border-radius: 10px;
 }
 
 #workspaces button.active {
-  background-color: #61afef; /* 蓝色高亮 */
-  color: #ffffff;
+  background-color: #89b4fa;
+  color: #11111b;
   padding: 2px 8px;
   margin: 0 2px;
   border-radius: 10px;
@@ -119,7 +164,7 @@
 #workspaces button {
   background: transparent;
   border: none;
-  color: #888888;
+  color: #6c7086;
   padding: 2px 8px;
   margin: 0 2px;
   font-weight: bold;

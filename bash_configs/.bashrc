@@ -31,6 +31,9 @@ alias gb="git branch"
 alias gi="git init"
 alias gcl="git clone"
 
+# Other aliases
+alias gemini="npx https://github.com/google-gemini/gemini-cli"
+
 # -------------------------------------------------------------
 # fzf Configurations
 # -------------------------------------------------------------

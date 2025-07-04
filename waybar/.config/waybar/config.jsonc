@@ -4,15 +4,17 @@
   "height": 40,
   "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces",
+    "hyprland/window",
     "tray",
     "custom/lock",
     "custom/reboot",
     "custom/power"
   ],
   "modules-center": [
-    "clock"
-],
+    "custom/time",
+    "custom/weekday",
+    "custom/date"
+  ],
   "modules-right": [
     "battery",
     "bluetooth",
@@ -23,6 +25,9 @@
     "memory",
     "cpu"
   ],
+  "hyprland/window": {
+    "format": "{}"
+  },
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -33,7 +38,7 @@
     }
   },
   "custom/hyprsunset": {
-      "format": "<span color='#ffd700'>󱩌</span> {}",
+      "format": "󱩌 {}",
       "interval": 1,
       "exec": "~/.config/hypr/scripts/hyprsunset_control.sh get_strength",
       "return-type": "json",
@@ -42,19 +47,19 @@
       "on-scroll-down": "~/.config/hypr/scripts/hyprsunset_control.sh decrease"
   },
   "custom/lock": {
-      "format": "<span color='#00FFFF'>  </span>",
+      "format": "",
       "on-click": "hyprlock",
       "tooltip": true,
       "tooltip-format": "Lock"
   },
   "custom/reboot": {
-    "format": "<span color='#FFD700'>  </span>",
+    "format": "",
     "on-click": "systemctl reboot",
     "tooltip": true,
     "tooltip-format": "Reboot"
   },
   "custom/power": {
-    "format": "<span color='#FF4040'>  </span>",
+    "format": "",
     "on-click": "systemctl poweroff",
     "tooltip": true,
     "tooltip-format": "Shutdown"
@@ -64,27 +69,23 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#28CD41'> {icon} </span>{capacity}% ",
-    "format-charging": " 󱐋{capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋{capacity}%",
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
   },
   "pulseaudio": {
-    "format": "<span color='#00FF7F'>{icon}</span> {volume}% ",
-    "format-muted": "<span color='#FF4040'> 󰖁 </span>0% ",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
     "format-icons": {
-      "headphone": "<span color='#BF00FF'>  </span>",
-      "hands-free": "<span color='#BF00FF'>  </span>",
-      "headset": "<span color='#BF00FF'>  </span>",
-      "phone": "<span color='#00FFFF'>  </span>",
-      "portable": "<span color='#00FFFF'>  </span>",
-      "car": "<span color='#FFA500'>  </span>",
-      "default": [
-        "<span color='#808080'>  </span>",
-        "<span color='#FFFF66'>  </span>",
-        "<span color='#00FF7F'>  </span>"
-      ]
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
     },
     "on-click-right": "pavucontrol -t 3",
     "on-click": "pactl -- set-sink-mute 0 toggle",
@@ -93,37 +94,36 @@
   },
   "custom/temperature": {
     "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
-    "format": "<span color='#FFA500'>  </span>{}°C ",
+    "format": " {}°C",
     "interval": 5,
     "tooltip": false
   },
   "memory": {
-    "format": "<span color='#8A2BE2'>  </span> {percentage}%",
+    "format": " {percentage}%",
     "tooltip": true,
     "tooltip-format": "{used:0.2f}G/{total:0.2f}G"
   },
   "cpu": {
-    "format": "<span color='#FF9F0A'>  </span> {usage}% ",
+    "format": " {usage}%",
     "tooltip": true
   },
-  "clock": {
+  "custom/time": {
+    "format": "{}",
+    "exec": "date +\"%I:%M %p\"",
     "interval": 1,
-    "format": "{:%H:%M, %A, %d/%m/%Y}",
-    "tooltip": true,
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                                  "months":     "<span color='#ffead3'><b>{}</b></span>",
-                                  "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                                  "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                                  "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                                  "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    }
+    "tooltip": false
+  },
+  "custom/weekday": {
+    "format": "{}",
+    "exec": "date +\"%a\"",
+    "interval": 1,
+    "tooltip": false
+  },
+  "custom/date": {
+    "format": "{}",
+    "exec": "date +\"%B %d\"",
+    "interval": 1,
+    "tooltip": false
   },
   "tray": {
     "icon-size": 17,
@@ -131,21 +131,16 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span color='#FFD700'>{icon}</span>{percent}% ",
+    "format": "{icon} {percent}%",
     "tooltip": true,
     "tooltip-format": "Brightness: {percent}%",
-    "format-icons": [
-      "<span color='#696969'> 󰃞 </span>",  
-      "<span color='#A9A9A9'> 󰃝 </span>",  
-      "<span color='#FFFF66'> 󰃟 </span>",  
-      "<span color='#FFD700'> 󰃠 </span>"   
-    ]
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"]
   },
   "bluetooth": {
-    "format": "<span color='#00BFFF'>  </span>",
+    "format": "",
     "format-no-controller": "",
-    "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",
-    "format-connected-battery": "<span color='#00BFFF'>  </span>{device_alias}{device_battery_percentage}% ",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "tooltip-format": "{status}\t{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

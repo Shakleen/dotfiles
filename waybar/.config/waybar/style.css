@@ -17,29 +17,40 @@
   box-shadow: none;
 }
 
-/* 所有模块统一风格 */
+/* All modules general styling */
 #workspaces,
 #window,
-#tray {
-  background-color: #11111b;
-  padding: 4px 6px;
-  margin-top: 6px;
-  margin-left: 6px;
-  margin-right: 6px;
-  border-radius: 10px;
-  border-width: 0px;
-}
-
-/* Custom Clock Modules */
+#tray,
 #custom-time,
 #custom-weekday,
-#custom-date {
+#custom-date,
+#battery,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#custom-hyprsunset,
+#custom-temperature,
+#memory,
+#cpu,
+#custom-power-menu {
   background-color: #11111b;
   margin-top: 6px;
   padding: 4px 8px;
   border-width: 0px;
 }
 
+/* Specific styling for modules on the left */
+#window {
+  border-radius: 10px 0 0 10px;
+  padding-left: 12px;
+  margin-left: 6px;
+}
+
+#tray {
+  /* No specific border-radius or padding for tray as it's not the first/last item in the group */
+}
+
+/* Custom Clock Modules (center) */
 #custom-time {
   border-radius: 10px 0 0 10px;
   padding-left: 12px;
@@ -53,63 +64,24 @@
 #custom-date {
   border-radius: 0 10px 10px 0;
   padding-right: 12px;
-  margin-right: 6px;
   color: #89b4fa; /* Blue */
 }
 
 /* Right side modules */
-#battery,
-#bluetooth,
-#pulseaudio,
-#backlight,
-#custom-hyprsunset,
-#custom-temperature,
-#memory,
-#cpu {
-  background-color: #11111b;
-  margin-top: 6px;
-  padding: 4px 8px;
-  border-width: 0px;
-}
-
 #battery {
   border-radius: 10px 0 0 10px;
   padding-left: 12px;
 }
 
 #cpu {
+  /* No specific border-radius or padding for CPU as it's not the last item in the group */
+}
+
+#custom-power-menu {
   border-radius: 0 10px 10px 0;
   padding-right: 12px;
   margin-right: 6px;
-}
-
-/* Left side modules */
-#custom-power {
-  background-color: #11111b;
-  margin-top: 6px;
-  margin-right: 6px;
-  padding: 4px 12px 4px 8px;
-  border-radius: 0 10px 10px 0;
-  border-width: 0px;
-  color: #f38ba8;
-}
-
-#custom-lock {
-  background-color: #11111b;
-  margin-top: 6px;
-  margin-left: 6px;
-  padding: 4px 8px 4px 12px;
-  border-radius: 10px 0 0 10px;
-  border-width: 0px;
-  color: #cba6f7;
-}
-
-#custom-reboot {
-  background-color: #11111b;
-  margin-top: 6px;
-  padding: 4px 8px;
-  border-width: 0px;
-  color: #fab387;
+  color: #f38ba8; /* Red */
 }
 
 /* Module Colors */
@@ -136,11 +108,9 @@
 #custom-time:hover,
 #custom-weekday:hover,
 #custom-date:hover,
-#custom-lock:hover,
-#custom-reboot:hover,
-#custom-power:hover,
-#custom-hyprsunset:hover,
-#window:hover {
+#custom-power-menu:hover,
+#window:hover,
+#tray:hover {
   background-color: #313244;
 }
 

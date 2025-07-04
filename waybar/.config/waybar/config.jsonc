@@ -5,10 +5,7 @@
   "spacing": 0,
   "modules-left": [
     "hyprland/window",
-    "tray",
-    "custom/lock",
-    "custom/reboot",
-    "custom/power"
+    "tray"
   ],
   "modules-center": [
     "custom/time",
@@ -23,7 +20,8 @@
     "custom/hyprsunset",
     "custom/temperature",
     "memory",
-    "cpu"
+    "cpu",
+    "custom/power-menu"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -45,24 +43,6 @@
       "on-click": "~/.config/hypr/scripts/hyprsunset_control.sh toggle",
       "on-scroll-up": "~/.config/hypr/scripts/hyprsunset_control.sh increase",
       "on-scroll-down": "~/.config/hypr/scripts/hyprsunset_control.sh decrease"
-  },
-  "custom/lock": {
-      "format": "",
-      "on-click": "hyprlock",
-      "tooltip": true,
-      "tooltip-format": "Lock"
-  },
-  "custom/reboot": {
-    "format": "",
-    "on-click": "systemctl reboot",
-    "tooltip": true,
-    "tooltip-format": "Reboot"
-  },
-  "custom/power": {
-    "format": "",
-    "on-click": "systemctl poweroff",
-    "tooltip": true,
-    "tooltip-format": "Shutdown"
   },
   "battery": {
     "states": {
@@ -124,6 +104,12 @@
     "exec": "date +\"%B %d\"",
     "interval": 1,
     "tooltip": false
+  },
+  "custom/power-menu": {
+    "format": "",
+    "on-click": "~/.config/waybar/scripts/power_menu.sh",
+    "tooltip": true,
+    "tooltip-format": "Power Menu"
   },
   "tray": {
     "icon-size": 17,

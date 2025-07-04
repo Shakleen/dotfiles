@@ -9,6 +9,7 @@ local options = {
         "gowork",
         "lua",
         "luadoc",
+        "latex",
         "markdown",
         "printf",
         "python",

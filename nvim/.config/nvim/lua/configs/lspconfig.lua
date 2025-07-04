@@ -13,8 +13,9 @@ local lspconfig = require("lspconfig")
 
 -- list of all servers configured.
 lspconfig.servers = {
-    "lua_ls",
     "gopls",
+    "ltex_plus",
+    "lua_ls",
     "pyright",
 }
 
@@ -88,6 +89,31 @@ lspconfig.pyright.setup({
         python = {
             analysis = {
                 typeCheckingMode = "off", -- Disable type checking diagnostics
+            },
+        },
+    },
+})
+
+lspconfig.ltex_plus.setup({
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+
+    filetypes = { "tex", "latex", "markdown", "plaintex" },
+    settings = {
+        ltex = {
+            language = "en-US", -- Change to your preferred language
+            additionalRules = {
+                enablePickyRules = true,
+                motherTongue = "en-US",
+            },
+            -- Add custom dictionaries
+            dictionary = {
+                ["en-US"] = {}, -- Add custom words here
+            },
+            -- Disable specific rules if needed
+            disabledRules = {
+                ["en-US"] = {}, -- Add rules to disable here
             },
         },
     },

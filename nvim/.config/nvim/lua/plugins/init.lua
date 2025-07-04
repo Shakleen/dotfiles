@@ -132,4 +132,12 @@ return {
     {
         "Nash0x7E2/awesome-flutter-snippets",
     },
+
+    {
+        "lervag/vimtex",
+        lazy = false,
+        init = function()
+            require("configs.vimtex")
+        end,
+    },
 }

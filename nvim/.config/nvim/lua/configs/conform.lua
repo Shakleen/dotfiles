@@ -8,6 +8,7 @@ local options = {
         gomod = { "gofumpt", "goimports-reviser" },
         gotmpl = { "gofumpt", "goimports-reviser" },
         python = { "black" },
+        tex = { "latexindent" },
     },
 
     formatters = {
@@ -24,6 +25,7 @@ local options = {
                 "80",
             },
         },
+        latexindent = require("configs.formatters.latex"),
     },
 
     format_on_save = {

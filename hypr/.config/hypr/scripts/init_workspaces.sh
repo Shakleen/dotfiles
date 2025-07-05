@@ -2,18 +2,50 @@
 
 # Launch Alacritty and move to workspace 1
 hyprctl dispatch workspace 1
-alacritty -e tmux new -A -s "Flash Learn" -c /run/media/shakleen/programming/flash-learn-mono/ &
+
+SESSION_FLASH_LEARN="Flash Learn"
+PATH_FLASH_LEARN="/run/media/shakleen/programming/flash-learn-mono/"
+
+if ! tmux has-session -t "$SESSION_FLASH_LEARN" 2>/dev/null; then
+    # Session does not exist, create a new one and attach
+    alacritty -e tmux new -A -s "$SESSION_FLASH_LEARN" -c "$PATH_FLASH_LEARN" &
+else
+    # Session exists, attach to it (assuming it was restored with history)
+    echo "Tmux session '$SESSION_FLASH_LEARN' already exists. Attaching to it."
+    alacritty -e tmux attach -t "$SESSION_FLASH_LEARN" &
+fi
 
 # Give Alacritty/tmux a moment to start
 sleep 1
 
 # Create two more detached tmux sessions in specified directories
-tmux new -s "Resume" -d -c /run/media/shakleen/programming/Curriculum-Vitae/
-tmux new -s "Dot Files" -d -c /home/shakleen/dotfiles
+SESSION_RESUME="Resume"
+PATH_RESUME="/run/media/shakleen/programming/Curriculum-Vitae/"
+
+if ! tmux has-session -t "$SESSION_RESUME" 2>/dev/null; then
+    # Session does not exist, create a new detached one
+    tmux new -s "$SESSION_RESUME" -d -c "$PATH_RESUME"
+else
+    echo "Tmux session '$SESSION_RESUME' already exists. Skipping creation."
+    # If the session exists, we assume it was restored by tmux-continuum
+    # and has its history. No action needed as it's detached.
+fi
+
+SESSION_DOT_FILES="Dot Files"
+PATH_DOT_FILES="/home/shakleen/dotfiles"
+
+if ! tmux has-session -t "$SESSION_DOT_FILES" 2>/dev/null; then
+    # Session does not exist, create a new detached one
+    tmux new -s "$SESSION_DOT_FILES" -d -c "$PATH_DOT_FILES"
+else
+    echo "Tmux session '$SESSION_DOT_FILES' already exists. Skipping creation."
+    # If the session exists, we assume it was restored by tmux-continuum
+    # and has its history. No action needed as it's detached.
+fi
 
 # Launch Google Chrome and move to workspace 3
 hyprctl dispatch workspace 3
-google-chrome-stable &
+zen-browser &
 
 # Launch Dolphin and move to workspace 4
 hyprctl dispatch workspace 4

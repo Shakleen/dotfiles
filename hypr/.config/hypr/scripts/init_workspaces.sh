@@ -50,3 +50,7 @@ zen-browser &
 # Launch Dolphin and move to workspace 4
 hyprctl dispatch workspace 4
 dolphin &
+
+# Launch qbittorrent and move to workspace 5
+hyprctl dispatch workspace 5
+qbittorrent &

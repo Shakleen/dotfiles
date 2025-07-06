@@ -4,8 +4,8 @@
   "height": 40,
   "spacing": 0,
   "modules-left": [
-    "hyprland/window",
-    "tray"
+    "tray",
+    "hyprland/window"
   ],
   "modules-center": [
     "custom/time",
@@ -14,7 +14,6 @@
   ],
   "modules-right": [
     "battery",
-    "bluetooth",
     "pulseaudio",
     "backlight",
     "custom/hyprsunset",

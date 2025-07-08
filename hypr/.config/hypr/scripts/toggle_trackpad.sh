@@ -14,9 +14,9 @@ STATE=$(cat "$STATE_FILE")
 if [ "$STATE" = "1" ]; then
     hyprctl keyword "device[$DEVICE]:enabled" false
     echo "0" > "$STATE_FILE"
-    notify-send "Trackpad disabled"
+    swayosd-client --custom-message "Trackpad disabled" --custom-icon "input-touchpad-symbolic"
 else
     hyprctl keyword "device[$DEVICE]:enabled" true
     echo "1" > "$STATE_FILE"
-    notify-send "Trackpad enabled"
+    swayosd-client --custom-message "Trackpad enabled" --custom-icon "input-touchpad-symbolic"
 fi

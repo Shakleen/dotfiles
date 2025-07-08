@@ -43,7 +43,31 @@ else
     # and has its history. No action needed as it's detached.
 fi
 
-# Launch Google Chrome and move to workspace 3
+SESSION_TERMINAL="Terminal"
+PATH_TERMINAL="/home/shakleen"
+
+if ! tmux has-session -t "$SESSION_TERMINAL" 2>/dev/null; then
+    # Session does not exist, create a new detached one
+    tmux new -s "$SESSION_TERMINAL" -d -c "$PATH_TERMINAL"
+else
+    echo "Tmux session '$SESSION_TERMINAL' already exists. Skipping creation."
+    # If the session exists, we assume it was restored by tmux-continuum
+    # and has its history. No action needed as it's detached.
+fi
+
+SESSION_NEETCODE="NeetCode"
+PATH_NEETCODE="/run/media/shakleen/programming/neetcode/"
+
+if ! tmux has-session -t "$SESSION_NEETCODE" 2>/dev/null; then
+    # Session does not exist, create a new detached one
+    tmux new -s "$SESSION_NEETCODE" -d -c "$PATH_NEETCODE"
+else
+    echo "Tmux session '$SESSION_NEETCODE' already exists. Skipping creation."
+    # If the session exists, we assume it was restored by tmux-continuum
+    # and has its history. No action needed as it's detached.
+fi
+
+# Launch Zen Browser and move to workspace 3
 hyprctl dispatch workspace 3
 zen-browser &
 

@@ -67,11 +67,15 @@ set_temperature_hyprsunset() {
 
     echo "$new_temp" > "$STATE_FILE" # Update state file
 
+    local display_text=""
     if (( new_temp == ${TEMP_STEPS[0]} )); then # If it's the coldest step (6500K)
         hyprctl hyprsunset identity # Treat as "off"
+        display_text="Blue Light: OFF"
     else
         hyprctl hyprsunset temperature "$new_temp"
+        display_text="Blue Light: ${new_temp}K"
     fi
+    swayosd-client --custom-message "$display_text" --custom-icon "temperature-warm-symbolic"
 }
 
 # Function to toggle hyprsunset

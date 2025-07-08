@@ -26,4 +26,4 @@ new_brightness=$(brightnessctl g)
 new_brightness_percentage=$(( (new_brightness * 100) / max_brightness ))
 
 # Display the brightness level using swayosd
-swayosd-client --brightness "$new_brightness_percentage"
+swayosd-client --brightness "$new_brightness_percentage" --custom-icon "display-brightness-symbolic"

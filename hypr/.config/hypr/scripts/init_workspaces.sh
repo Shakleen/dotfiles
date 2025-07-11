@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Wait for tmux continuum to restore the sessions
+while [ ! -f ~/.tmux/resurrect/restore_complete ]; do
+    sleep 0.1
+done
+
 # Launch Alacritty and move to workspace 1
 hyprctl dispatch workspace 1
 
@@ -16,7 +21,7 @@ else
 fi
 
 # Give Alacritty/tmux a moment to start
-sleep 1
+sleep 2
 
 # Create two more detached tmux sessions in specified directories
 SESSION_RESUME="Resume"

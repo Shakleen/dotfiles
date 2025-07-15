@@ -55,3 +55,5 @@ end, { desc = "Harpoon previous harpoon marked window" })
 map("n", "<C-S-N>", function()
     harpoon:list():next()
 end, { desc = "Harpoon next harpoon marked window" })
+
+map("n", "<leader>yf", 'ggVG"+y', { desc = "Copy whole file to system clipboard" })

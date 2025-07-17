@@ -57,3 +57,6 @@ map("n", "<C-S-N>", function()
 end, { desc = "Harpoon next harpoon marked window" })
 
 map("n", "<leader>yf", 'ggVG"+y', { desc = "Copy whole file to system clipboard" })
+
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")

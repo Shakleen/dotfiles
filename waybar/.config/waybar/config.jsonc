@@ -5,7 +5,6 @@
   "spacing": 0,
   "modules-left": [
     "tray",
-    "hyprland/window"
   ],
   "modules-center": [
     "custom/time",
@@ -20,9 +19,6 @@
     "cpu",
     "custom/power-menu"
   ],
-  "hyprland/window": {
-    "format": "{}"
-  },
   "battery": {
     "states": {
       "warning": 30,

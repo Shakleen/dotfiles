@@ -43,3 +43,7 @@ dolphin &
 # Launch qbittorrent and move to workspace 5
 hyprctl dispatch workspace 5
 qbittorrent &
+
+# Launch audacity for music
+hyprctl dispathc workspace 6
+audacity &
